@@ -1,0 +1,4 @@
+{
+  "disableTicketCheck": true,
+  "types": ["feat", "fix", "docs", "style", "refactor", "test", "ci", "chore"]
+}
