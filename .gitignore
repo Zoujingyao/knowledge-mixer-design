@@ -25,3 +25,6 @@
 # ide
 /.vscode
 /.idea
+
+# test snapshots
+__snapshots__

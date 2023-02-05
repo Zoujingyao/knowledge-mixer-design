@@ -6,6 +6,8 @@ nav:
 group:
   title: Components
   path: /components
+group: 
+  title: Components
 ---
 
 ## Foo
