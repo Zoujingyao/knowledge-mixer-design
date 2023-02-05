@@ -3,7 +3,7 @@
   "name": "knowledge-mixer-design",
   "version": "1.0.0",
   "scripts": {
-    "start": "dumi dev",
+    "start": "dumi  dev ",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father build",
@@ -40,7 +40,8 @@
     "@ant-design/icons": "^5.0.0",
     "antd": "^5.1.5",
     "react": "^18.0.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",

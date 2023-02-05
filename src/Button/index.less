@@ -1,0 +1,94 @@
+@import '../../assets/css/index.less';
+.km-btn {
+  position: relative;
+  display: inline-box;
+  box-sizing: border-box;
+  min-width: 88px;
+  height: 32px;
+  margin: 0 5px;
+  padding: 4px 15px;
+  font-weight: @font-weight-normal;
+  font-size: @default-font-size;
+  white-space: nowrap;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: @default-fillet;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  .km-btn-icon {
+    font-size: @default-font-size;
+
+    &.km-btn-icon-lg {
+      font-size: @large-font-size;
+    }
+
+    &.km-btn-icon-sm {
+      font-size: @default-font-size;
+    }
+  }
+  &-icon-only {
+    width: 32px;
+    height: 32px;
+    padding: 2.4px 0;
+    font-size: @large-font-size;
+  }
+
+  &-lg {
+    height: 40px;
+    padding: 6.4px 15px;
+    font-size: @large-font-size;
+  }
+
+  &-sm {
+    height: 24px;
+    padding: 0 7px;
+    font-size: @default-font-size;
+  }
+
+  &-circle {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &-color-primary {
+    color: @white;
+    background-color: @primary;
+  }
+  &-color-info {
+    color: @white;
+    background-color: @info;
+  }
+  &-color-success {
+    color: @white;
+    background-color: @success;
+  }
+  &-color-error {
+    color: @white;
+    background-color: @error;
+  }
+  &-color-warning {
+    color: @white;
+    background-color: @warning;
+  }
+  &-has-icon {
+    .anticon {
+      margin-right: 5px;
+    }
+  }
+}
+.spin {
+  animation: icon-spin infinite 1s linear;
+}
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
