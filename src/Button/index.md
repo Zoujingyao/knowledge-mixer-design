@@ -37,7 +37,7 @@ return (
         <Button onClick={handleSyncClick} loading={true} className='km-btn-lg'>
         异步按钮
       </Button>
-      <Button onClick={handleClick}>按钮</Button>
+      <Button size='small' onClick={handleClick}>按钮</Button>
       <Button shape="circle" icon={<Spin className='icon'/>}></Button>
       <Button colorSchemes="success" icon={<Check className='icon'/>}>
         成功

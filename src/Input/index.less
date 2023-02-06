@@ -1,0 +1,42 @@
+@import '../../assets/css/index.less';
+.km-input {
+  position: relative;
+  display: inline-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  padding: 2px 11px;
+  border: 1px solid @gray500;
+  border-radius: 5px;
+  outline: none;
+  &:focus {
+    border: 1px solid @primary;
+    box-shadow: 0px 0px 2px 0px @primary;
+  }
+  &-border-none {
+    border: none;
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+  &-md {
+    height: 32px;
+    font-size: @middle-font-size;
+  }
+  &-lg {
+    height: 40px;
+    padding: 4px 11px;
+    font-size: @large-font-size;
+  }
+  &-sm {
+    height: 24px;
+    padding: 1px 11px;
+    font-size: @small-font-size;
+  }
+}
+
+// .kw-input-error {
+// }
+// .kw-input-waring {
+// }
