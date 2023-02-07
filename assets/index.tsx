@@ -20,6 +20,7 @@ import Ad from './icon/ad';
 import Home from './icon/home';
 import Edit from './icon/edit';
 import Upload from './icon/upload';
+import Close from './icon/close';
 export {
   Archive,
   Setting,
@@ -43,4 +44,5 @@ export {
   Alert,
   Error,
   Upload,
+  Close,
 };

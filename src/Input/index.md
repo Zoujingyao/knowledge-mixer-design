@@ -10,23 +10,30 @@ group:
 
 ## Input
 
-Demo:
+基本样式:
+```tsx
+import React from 'react';
+import { Input } from 'knowledge-mixer-design';
 
+export default () => <Input />;
+```
+
+
+不同状态:
 ```tsx
 import React from 'react';
 import { Input } from 'knowledge-mixer-design';
 
 export default () => {
-  const onChange = (val: any) => {
-    console.log(val);
-  };
-  const onBlur = (val: any) => {
-    console.log(val);
-  };
 return (
+<>
 <div>
-     <Input  />
+     <Input status='error' />
+     <br/>
+     <br/>
+     <Input status='warning' />
 </div>
+</>
 )
 };
 ```

@@ -1,8 +1,9 @@
-import React, { FC, PropsWithChildren, useCallback } from 'react';
+import React, { FC, PropsWithChildren, useCallback, useMemo } from 'react';
 import { InputProps } from './types';
 import { getPrefixCls } from '../../utils';
 import { isFunction } from 'lodash-es';
 import classNames from 'classnames';
+import { Close } from '../../assets/';
 import './index.less';
 
 const Input: FC<PropsWithChildren<InputProps>> = (props) => {
@@ -12,7 +13,7 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     onBlur,
     onChange,
     value,
-    defaultValue = '',
+    defaultValue,
     placeholder = '',
     allowClear = false,
     bordered = true,
@@ -21,40 +22,44 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     size = 'middle',
     disabled = false,
   } = props;
-  const selfPrefixCls = getPrefixCls('input');
+  const selfPrefixCls = useMemo(() => getPrefixCls('input'), []);
 
-  let sizeCls = '';
-  switch (size) {
-    case 'middle':
-      sizeCls = 'md';
-      break;
-    case 'large':
-      sizeCls = 'lg';
-      break;
-    case 'small':
-      sizeCls = 'sm';
-      break;
-    default:
-      sizeCls = 'md';
-      break;
-  }
+  const sizeCls = useMemo(() => {
+    switch (size) {
+      case 'middle':
+        return 'md';
+      case 'large':
+        return 'lg';
+      case 'small':
+        return 'sm';
+      default:
+        return 'md';
+    }
+  }, [size]);
   // 类名汇总
-  const classes = classNames(
-    selfPrefixCls,
-    {
-      [`${selfPrefixCls}-${status}`]: status,
-      [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
-      [`${selfPrefixCls}-border-none`]: !bordered,
+  const Inputclasses = useMemo(
+    () =>
+      classNames(
+        selfPrefixCls,
+        {
+          [`${selfPrefixCls}-${status}`]: status && !allowClear,
+          [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
+          [`${selfPrefixCls}-border-none`]: !bordered,
 
-      // [`${selfPrefixCls}-icon-only`]: !children && children !== 0 && iconType,
-    },
-    className,
-    // LoadingNode() && childrenNode ? `${selfPrefixCls}-has-icon` : '',
+          // [`${selfPrefixCls}-icon-only`]: !children && children !== 0 && iconType,
+        },
+        className,
+        // LoadingNode() && childrenNode ? `${selfPrefixCls}-has-icon` : '',
+      ),
+    [status, size],
   );
   // onChange的处理
   const handleOnChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (e) => {
-      if (isFunction(onChange)) onChange(e.target.value);
+      if (isFunction(onChange)) {
+        onChange(e.target.value);
+      } else {
+      }
     },
     [onChange],
   );
@@ -65,26 +70,23 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     [onBlur],
   );
 
-  const textValue = value || defaultValue;
+  const textValue = value || undefined;
   return (
-    <input
-      type={type}
-      onChange={handleOnChange}
-      className={classes}
-      placeholder={placeholder}
-      disabled={disabled}
-      value={textValue}
-      onBlur={handleOnBlur}
-      id={id}
-    />
+    <>
+      <input
+        type={type}
+        onChange={onChange ? handleOnChange : undefined}
+        onBlur={onBlur ? handleOnBlur : undefined}
+        className={Inputclasses}
+        placeholder={placeholder}
+        disabled={disabled}
+        value={textValue}
+        id={id}
+        defaultValue={defaultValue}
+      />
+      {!allowClear || <Close className="icon kw-ipt-close" onClick={() => console.log(111)} />}
+    </>
   );
-};
-
-const fath = () => {
-  const onChange = (e: any) => {
-    console.log(e);
-  };
-  return <Input />;
 };
 
 export default React.memo(Input);

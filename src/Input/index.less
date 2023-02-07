@@ -4,8 +4,9 @@
   display: inline-box;
   box-sizing: border-box;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   padding: 2px 11px;
+  background-color: @white;
   border: 1px solid @gray500;
   border-radius: 5px;
   outline: none;
@@ -34,6 +35,31 @@
     padding: 1px 11px;
     font-size: @small-font-size;
   }
+  &-error {
+    background-color: @white;
+    border: 1px solid @error;
+    &:focus {
+      border: 1px solid @error;
+      box-shadow: 0px 0px 2px 0px @error;
+    }
+  }
+  &-warning {
+    background-color: @white;
+    border: 1px solid @warning;
+    &:focus {
+      border: 1px solid @warning;
+      box-shadow: 0px 0px 2px 0px @warning;
+    }
+  }
+}
+
+.kw-ipt-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 20px;
+  height: 20px;
 }
 
 // .kw-input-error {
