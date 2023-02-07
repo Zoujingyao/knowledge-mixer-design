@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useCallback, useMemo } from 'react';
+import React, { FC, PropsWithChildren, useCallback, useMemo, ReactNode } from 'react';
 import { InputProps } from './types';
 import { getPrefixCls } from '../../utils';
 import { isFunction } from 'lodash-es';
@@ -14,16 +14,23 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     onChange,
     value,
     defaultValue,
-    placeholder = '',
+    placeholder,
     allowClear = false,
     bordered = true,
     type = 'text',
     status,
     size = 'middle',
     disabled = false,
+    addonAfter,
+    addonBefore,
+    prefix,
+    suffix,
   } = props;
-  const selfPrefixCls = useMemo(() => getPrefixCls('input'), []);
 
+  const isAffix = allowClear || prefix !== undefined || suffix !== undefined; // 是否需要元素包裹
+  const isGroup = addonAfter !== undefined || addonBefore !== undefined;
+
+  const selfPrefixCls = useMemo(() => getPrefixCls('input'), []);
   const sizeCls = useMemo(() => {
     switch (size) {
       case 'middle':
@@ -36,24 +43,20 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
         return 'md';
     }
   }, [size]);
-  // 类名汇总
-  const Inputclasses = useMemo(
-    () =>
-      classNames(
-        selfPrefixCls,
-        {
-          [`${selfPrefixCls}-${status}`]: status && !allowClear,
-          [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
-          [`${selfPrefixCls}-border-none`]: !bordered,
 
-          // [`${selfPrefixCls}-icon-only`]: !children && children !== 0 && iconType,
-        },
-        className,
-        // LoadingNode() && childrenNode ? `${selfPrefixCls}-has-icon` : '',
-      ),
-    [status, size],
-  );
-  // onChange的处理
+  // 类名汇总
+  const Inputclasses = useMemo(() => {
+    return classNames(
+      selfPrefixCls,
+      {
+        [`${selfPrefixCls}-${status}`]: status && !allowClear,
+        [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
+        [`${selfPrefixCls}-border-none`]: isAffix || isGroup || !bordered,
+      },
+      className,
+    );
+  }, [status, sizeCls, className, allowClear, bordered, selfPrefixCls, isAffix, isGroup]);
+  // 两个事件的处理
   const handleOnChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (e) => {
       if (isFunction(onChange)) {
@@ -69,24 +72,40 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     },
     [onBlur],
   );
-
   const textValue = value || undefined;
-  return (
-    <>
-      <input
-        type={type}
-        onChange={onChange ? handleOnChange : undefined}
-        onBlur={onBlur ? handleOnBlur : undefined}
-        className={Inputclasses}
-        placeholder={placeholder}
-        disabled={disabled}
-        value={textValue}
-        id={id}
-        defaultValue={defaultValue}
-      />
-      {!allowClear || <Close className="icon kw-ipt-close" onClick={() => console.log(111)} />}
-    </>
+  // 基础Input
+  const defaultInput = (
+    <input
+      type={type}
+      onChange={onChange ? handleOnChange : undefined}
+      onBlur={onBlur ? handleOnBlur : undefined}
+      className={Inputclasses}
+      placeholder={placeholder}
+      disabled={disabled}
+      value={textValue}
+      id={id}
+      defaultValue={defaultValue}
+    />
   );
+
+  // 添加前后元素的处理
+  const AffixClasses = classNames({
+    [`${selfPrefixCls}-affix-wrapper`]: isAffix,
+    [`${selfPrefixCls}-affix-wrapper-${sizeCls}`]: sizeCls,
+    [`${selfPrefixCls}-border-none`]: isGroup || !bordered,
+  });
+  const AffixInput = isAffix && (
+    <span className={AffixClasses}>
+      {prefix && <span className="km-input-prefix">{prefix}</span>}
+      {defaultInput}
+      {suffix && <span className="km-input-suffix">{suffix}</span>}
+    </span>
+  );
+  // 添加前后组件的处理
+
+  const finalInput = isGroup ? <></> : isAffix ? AffixInput : defaultInput;
+
+  return <>{finalInput}</>;
 };
 
 export default React.memo(Input);
