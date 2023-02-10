@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useCallback, useMemo, ReactNode } from 'react';
+import React, { FC, PropsWithChildren, useCallback, useMemo, ReactNode, useRef } from 'react';
 import { InputProps } from './types';
 import { getPrefixCls } from '../../utils';
 import { isFunction } from 'lodash-es';
@@ -27,6 +27,8 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     suffix,
   } = props;
 
+  const iptRef = useRef<HTMLInputElement | null>(null);
+
   const isAffix = allowClear || prefix !== undefined || suffix !== undefined; // 是否需要元素包裹
   const isGroup = addonAfter !== undefined || addonBefore !== undefined;
 
@@ -49,13 +51,13 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     return classNames(
       selfPrefixCls,
       {
-        [`${selfPrefixCls}-${status}`]: status && !allowClear,
+        [`${selfPrefixCls}-${status}`]: status && !allowClear && !prefix && !suffix,
         [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
         [`${selfPrefixCls}-border-none`]: isAffix || isGroup || !bordered,
       },
       className,
     );
-  }, [status, sizeCls, className, allowClear, bordered, selfPrefixCls, isAffix, isGroup]);
+  }, [selfPrefixCls, status, allowClear, prefix, suffix, sizeCls, isAffix, isGroup, bordered, className]);
   // 两个事件的处理
   const handleOnChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (e) => {
@@ -74,31 +76,83 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   );
   const textValue = value || undefined;
   // 基础Input
-  const defaultInput = (
-    <input
-      type={type}
-      onChange={onChange ? handleOnChange : undefined}
-      onBlur={onBlur ? handleOnBlur : undefined}
-      className={Inputclasses}
-      placeholder={placeholder}
-      disabled={disabled}
-      value={textValue}
-      id={id}
-      defaultValue={defaultValue}
-    />
+  const defaultInput = useMemo(
+    () => (
+      <input
+        ref={iptRef}
+        type={type}
+        onChange={onChange ? handleOnChange : undefined}
+        onBlur={onBlur ? handleOnBlur : undefined}
+        className={Inputclasses}
+        placeholder={placeholder}
+        disabled={disabled}
+        value={textValue}
+        id={id}
+        defaultValue={defaultValue || undefined}
+      />
+    ),
+    [
+      Inputclasses,
+      defaultValue,
+      disabled,
+      handleOnBlur,
+      handleOnChange,
+      id,
+      onBlur,
+      onChange,
+      placeholder,
+      textValue,
+      type,
+    ],
   );
+  // 处理清空输入框
+  const handleClearClick = useCallback(() => {
+    (iptRef.current as any).value = '';
+
+    // handleOnChange(iptRef.current);
+  }, [iptRef]);
 
   // 添加前后元素的处理
-  const AffixClasses = classNames({
-    [`${selfPrefixCls}-affix-wrapper`]: isAffix,
-    [`${selfPrefixCls}-affix-wrapper-${sizeCls}`]: sizeCls,
-    [`${selfPrefixCls}-border-none`]: isGroup || !bordered,
-  });
+  const AffixClasses = useMemo(
+    () =>
+      classNames({
+        [`${selfPrefixCls}-affix-wrapper-${status}`]: status && !addonAfter && !addonBefore,
+        [`${selfPrefixCls}-affix-wrapper`]: isAffix,
+        [`${selfPrefixCls}-affix-wrapper-${sizeCls}`]: sizeCls,
+        [`${selfPrefixCls}-border-none`]: isGroup || !bordered,
+      }),
+    [addonAfter, addonBefore, bordered, isAffix, isGroup, selfPrefixCls, sizeCls, status],
+  );
+
+  const clearIconClassName = useMemo(
+    () => classNames('km-input-clear-icon', { ['km-input-clear-icon-hidden']: value === '' }),
+    [value],
+  );
+  const suffixSpan = useMemo(
+    () =>
+      !allowClear
+        ? suffix && <span className="km-input-suffix">{suffix}</span>
+        : suffix && (
+            <span className="km-input-suffix">
+              <span className={clearIconClassName}>
+                {
+                  <Close
+                    onClick={() => {
+                      handleClearClick();
+                    }}
+                  />
+                }
+              </span>
+              {suffix}
+            </span>
+          ),
+    [allowClear, suffix, clearIconClassName, handleClearClick],
+  );
   const AffixInput = isAffix && (
     <span className={AffixClasses}>
       {prefix && <span className="km-input-prefix">{prefix}</span>}
       {defaultInput}
-      {suffix && <span className="km-input-suffix">{suffix}</span>}
+      {suffixSpan}
     </span>
   );
   // 添加前后组件的处理

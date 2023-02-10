@@ -40,7 +40,7 @@
   }
   &-sm {
     // height: @sm-height;
-    padding: 1px 11px;
+    padding: 2px 11px;
     font-size: @small-font-size;
   }
   // 状态样式
@@ -89,7 +89,32 @@
       box-shadow: 0px 0px 2px 0px @primary;
     }
     &-md {
-      height: @md-height;
+      height: 28px;
+    }
+    &-sm {
+      height: 22px;
+      input {
+        font-size: 12px;
+      }
+    }
+    &-lg {
+      height: 32px;
+    }
+    &-error {
+      border-color: @error !important;
+      &:focus,
+      &:hover {
+        border: 1px solid @error !important;
+        box-shadow: 0px 0px 2px 0px @error !important;
+      }
+    }
+    &-warning {
+      border-color: @warning !important;
+      &:focus,
+      &:hover {
+        border: 1px solid @warning !important;
+        box-shadow: 0px 0px 2px 0px @warning !important;
+      }
     }
     .km-input-suffix,
     .km-input-prefix {
@@ -102,6 +127,16 @@
     }
     .km-input-suffix {
       margin-left: 4px;
+      .km-input-clear-icon {
+        height: 100%;
+        cursor: pointer;
+        svg path:hover {
+          fill: rgba(0, 0, 0, 0.45);
+        }
+        &-hidden {
+          visibility: hidden;
+        }
+      }
     }
   }
 

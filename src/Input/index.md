@@ -54,7 +54,13 @@ return (
 import React from 'react';
 import { Input,Check } from 'knowledge-mixer-design';
 
-export default () =>(
+export default () =>{
+// const [value,setValue] = React.useState('13123');
+// const onChange = (value:any)=>{
+// setValue(value);
+// console.log(value);
+// }
+return (
  <>
  <Input prefix={<Check className='icon'/>} size='large' defaultValue="mysite" />
  <br/>
@@ -64,8 +70,11 @@ export default () =>(
  <br/>
  <Input prefix={<Check className='icon'/>} size='small' defaultValue="mysite" />
  <br/>
+ <br/>
+ <Input prefix={<Check className='icon'/>}  allowClear suffix={'.com'} />
+ <br/>
  </>
- )
+ )}
  
 ```
 
