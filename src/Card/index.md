@@ -1,14 +1,14 @@
 ---
-title: Card
+title: Card 卡片
 nav:
   title: Components
   path: /components
 group:
-  title: Components
-  path: /components
+  title: 数据展示
+  path: /components/data-display
 ---
 
-## Card
+## Card 卡片
 
 Demo:
 
