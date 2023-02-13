@@ -78,16 +78,5 @@ return (
  
 ```
 
-## Test
-
-```tsx
-import React from 'react'
-import { Input } from 'antd';
-export default () =>(
- <Input addonBefore="http://" suffix=".com" allowClear defaultValue="mysite" />
- )
-
-```
-
 
 <API></API>

@@ -21,8 +21,6 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
     status,
     size = 'middle',
     disabled = false,
-    addonAfter,
-    addonBefore,
     prefix,
     suffix,
   } = props;
@@ -30,7 +28,6 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   const iptRef = useRef<HTMLInputElement | null>(null);
 
   const isAffix = allowClear || prefix !== undefined || suffix !== undefined; // 是否需要元素包裹
-  const isGroup = addonAfter !== undefined || addonBefore !== undefined;
 
   const selfPrefixCls = useMemo(() => getPrefixCls('input'), []);
   const sizeCls = useMemo(() => {
@@ -53,11 +50,11 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
       {
         [`${selfPrefixCls}-${status}`]: status && !allowClear && !prefix && !suffix,
         [`${selfPrefixCls}-${sizeCls}`]: sizeCls,
-        [`${selfPrefixCls}-border-none`]: isAffix || isGroup || !bordered,
+        [`${selfPrefixCls}-border-none`]: isAffix || !bordered,
       },
       className,
     );
-  }, [selfPrefixCls, status, allowClear, prefix, suffix, sizeCls, isAffix, isGroup, bordered, className]);
+  }, [selfPrefixCls, status, allowClear, prefix, suffix, sizeCls, isAffix, bordered, className]);
   // 两个事件的处理
   const handleOnChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (e) => {
@@ -116,12 +113,12 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
   const AffixClasses = useMemo(
     () =>
       classNames({
-        [`${selfPrefixCls}-affix-wrapper-${status}`]: status && !addonAfter && !addonBefore,
+        [`${selfPrefixCls}-affix-wrapper-${status}`]: status,
         [`${selfPrefixCls}-affix-wrapper`]: isAffix,
         [`${selfPrefixCls}-affix-wrapper-${sizeCls}`]: sizeCls,
-        [`${selfPrefixCls}-border-none`]: isGroup || !bordered,
+        [`${selfPrefixCls}-border-none`]: !bordered,
       }),
-    [addonAfter, addonBefore, bordered, isAffix, isGroup, selfPrefixCls, sizeCls, status],
+    [bordered, isAffix, selfPrefixCls, sizeCls, status],
   );
 
   const clearIconClassName = useMemo(
@@ -155,11 +152,8 @@ const Input: FC<PropsWithChildren<InputProps>> = (props) => {
       {suffixSpan}
     </span>
   );
-  // 添加前后组件的处理
 
-  const finalInput = isGroup ? <></> : isAffix ? AffixInput : defaultInput;
-
-  return <>{finalInput}</>;
+  return <>{isAffix ? AffixInput : defaultInput}</>;
 };
 
 export default React.memo(Input);

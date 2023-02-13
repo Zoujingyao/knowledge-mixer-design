@@ -34,8 +34,6 @@ export interface InputProps {
   disabled?: boolean;
   defaultValue?: string;
   id?: string;
-  addonAfter?: ReactNode;
-  addonBefore?: ReactNode;
   prefix?: ReactNode;
   suffix?: ReactNode;
 }
