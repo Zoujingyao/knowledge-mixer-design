@@ -1,0 +1,140 @@
+@import '../../assets/css/index.less';
+.km {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-feature-settings: 'tnum';
+  &-vertical {
+    position: relative;
+    top: -0.06em;
+    display: inline-block;
+    height: 0.9em;
+    margin: 0 8px;
+    vertical-align: middle;
+    border-top: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  &-horizontal {
+    display: flex;
+    clear: both;
+    width: 100%;
+    min-width: 100%;
+    margin: 24px 0;
+    &.km-with-text {
+      display: flex;
+      margin: 16px 0;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      font-size: 16px;
+      white-space: nowrap;
+      text-align: center;
+      border-top: 0;
+      border-top-color: rgba(0, 0, 0, 0.06);
+      &::before,
+      &::after {
+        position: relative;
+        top: 50%;
+        width: 50%;
+        border-top: 1px solid transparent;
+        border-top-color: inherit;
+        border-bottom: 0;
+        transform: translateY(50%);
+        content: '';
+      }
+    }
+    &.km-with-text-left.km-no-default-orientation-margin-left {
+      &::before {
+        width: 0;
+      }
+
+      &::after {
+        width: 100%;
+      }
+
+      .km-inner-text {
+        padding-left: 0;
+      }
+    }
+    &.km-with-text-right.km-no-default-orientation-margin-right {
+      &::before {
+        width: 100%;
+      }
+
+      &::after {
+        width: 0;
+      }
+
+      .km-inner-text {
+        padding-right: 0;
+      }
+    }
+    &.km-with-text-left::before {
+      top: 50%;
+      width: 5%;
+    }
+    &.km-with-text-left::after {
+      top: 50%;
+      width: 95%;
+    }
+    &.km-with-text-right::before {
+      top: 50%;
+      width: 95%;
+    }
+    &.km-with-text-right::after {
+      top: 50%;
+      width: 5%;
+    }
+  }
+  &-inner-text {
+    display: inline-block;
+    padding: 0 1em;
+  }
+  &-dashed {
+    background: none;
+    border-color: rgba(0, 0, 0, 0.06);
+    border-style: dashed;
+    border-width: 1px 0 0;
+    &.km-horizontal.km-with-text {
+      border-top: 0;
+      &::before,
+      &::after {
+        border-style: dashed none none;
+      }
+    }
+    &.km-vertical {
+      border-width: 0 0 0 1px;
+    }
+  }
+  &-plain.km-with-text {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &-rtl {
+    direction: rtl;
+    &.km-horizontal {
+      &.km-with-text-left {
+        &::before {
+          width: 95%;
+        }
+        &::after {
+          width: 5%;
+        }
+      }
+      &.km-with-text-right {
+        &::before {
+          width: 5%;
+        }
+        &::after {
+          width: 95%;
+        }
+      }
+    }
+  }
+}

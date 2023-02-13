@@ -1,12 +1,14 @@
 ---
+title: PasswordFormItem 密码框
 nav:
   title: Components 
   path: /components 
 group:
-  title: Components
+  title: 数据录入
+  path: /components/data-input
 ---
 
-# PasswordFormItem
+# PasswordFormItem 密码框
 
 带气泡卡片的密码框，气泡卡片内实时提示校验信息 默认规则：
 
