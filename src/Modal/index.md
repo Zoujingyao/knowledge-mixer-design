@@ -1,14 +1,14 @@
 ---
-title: Modal
+title: Modal 对话框
 nav:
   title: Components
   path: /components
 group:
-  title: Components
-  path: /components
+  title: 反馈
+  path: /components/react
 ---
 
-## Modal
+## Modal 对话框
 
 Demo:
 

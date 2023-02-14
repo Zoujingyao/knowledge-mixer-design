@@ -1,14 +1,14 @@
 ---
-title: Button
+title: Button 按钮
 nav:
   title: Components
   path: /components
 group:
-  title: Components
-  path: /components
+  title: 通用
+  path: /components/common
 ---
 
-## Button
+## Button 按钮
 
 Demo:
 
@@ -44,7 +44,7 @@ return (
       </Button>
       <Button colorSchemes="error">失败</Button>
       <Button colorSchemes="warning" style={btnStyle}>
-        警告+自定义style
+        警告+蓝色style
       </Button>
 
 </div>
