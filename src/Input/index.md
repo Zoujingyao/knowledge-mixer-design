@@ -73,6 +73,8 @@ return (
  <br/>
  <Input prefix={<Check className='icon'/>}  allowClear suffix={'.com'} />
  <br/>
+  <br/>
+   <Input prefix={<Check className='icon'/>}  status='warning' allowClear suffix={'.com'} />
  </>
  )}
  
