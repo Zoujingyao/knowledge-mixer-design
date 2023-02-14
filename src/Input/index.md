@@ -1,14 +1,14 @@
 ---
-title: Input
+title: Input  输入框
 nav:
-  title: Components
-  path: /components
+  title: Components 
+  path: /components 
 group:
-  title: Components
-  path: /components
+  title: 数据录入
+  path: /components/data-input
 ---
 
-# Input
+# Input 输入框
 
 ## 基本样式
 ```tsx
