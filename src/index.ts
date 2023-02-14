@@ -6,4 +6,5 @@ export { default as Input } from './Input';
 export { default as Card } from './Card';
 export { default as Divider } from './Divider';
 export { default as Space } from './Space';
+export { default as Breadcrumb } from './Breadcrumb';
 export * from '../assets/index';
