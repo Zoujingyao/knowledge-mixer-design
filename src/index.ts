@@ -7,4 +7,5 @@ export { default as Card } from './Card';
 export { default as Divider } from './Divider';
 export { default as Space } from './Space';
 export { default as Breadcrumb } from './Breadcrumb';
+export { default as TextArea } from './TextArea';
 export * from '../assets/index';
