@@ -8,4 +8,6 @@ export { default as Divider } from './Divider';
 export { default as Space } from './Space';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as TextArea } from './TextArea';
+export { default as Signature } from './Signature';
+export { default as IconFont } from './IconFont';
 export * from '../assets/index';

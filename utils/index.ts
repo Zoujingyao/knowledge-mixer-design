@@ -4,3 +4,5 @@ export const getPrefixCls = (prefixCls: string) => {
   return prefixCls ? `km-${prefixCls}` : 'km';
 };
 export type TupleToUnion<T extends unknown[]> = T[number];
+
+export * from './download';
