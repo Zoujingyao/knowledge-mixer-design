@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Spin } from '../../assets';
-import { getPrefixCls } from '../../utils';
+import { Spin } from '@/src';
+import { getPrefixCls } from '@/utils';
 import type { FC, PropsWithChildren } from 'react';
 import type { ButtonProps, Loading } from './types';
 import './index.less';

@@ -1,12 +1,10 @@
-@import '../../assets/css/index.less';
-
 @md-height: 32px;
 @lg-height: 40px;
 @sm-height: 24px;
 
 .km-input {
   position: relative;
-  display: inline-box;
+  display: inline-block;
   box-sizing: border-box;
   width: 100%;
   max-width: 300px;
@@ -18,7 +16,7 @@
   &:focus,
   &:hover {
     border: 1px solid @primary;
-    box-shadow: 0px 0px 2px 0px @primary;
+    box-shadow: 0 0 2px 0 @primary;
   }
   &-border-none {
     border: none;
@@ -50,7 +48,7 @@
     &:focus,
     &:hover {
       border: 1px solid @error;
-      box-shadow: 0px 0px 2px 0px @error;
+      box-shadow: 0 0 2px 0 @error;
     }
   }
   &-warning {
@@ -59,7 +57,7 @@
     &:focus,
     &:hover {
       border: 1px solid @warning;
-      box-shadow: 0px 0px 2px 0px @warning;
+      box-shadow: 0 0 2px 0 @warning;
     }
   }
   // 前后元素的包裹
@@ -81,12 +79,12 @@
     border-radius: 5px;
     transition: all 0.3s;
     .km-input {
-      padding: 2px 0px;
+      padding: 2px 0;
     }
     &:focus-within,
     &:hover {
       border: 1px solid @primary;
-      box-shadow: 0px 0px 2px 0px @primary;
+      box-shadow: 0 0 2px 0 @primary;
     }
     &-md {
       height: 28px;
@@ -105,7 +103,7 @@
       &:focus,
       &:hover {
         border: 1px solid @error !important;
-        box-shadow: 0px 0px 2px 0px @error !important;
+        box-shadow: 0 0 2px 0 @error !important;
       }
     }
     &-warning {
@@ -113,7 +111,7 @@
       &:focus,
       &:hover {
         border: 1px solid @warning !important;
-        box-shadow: 0px 0px 2px 0px @warning !important;
+        box-shadow: 0 0 2px 0 @warning !important;
       }
     }
     .km-input-suffix,

@@ -1,9 +1,9 @@
 import React, { FC, PropsWithChildren, useCallback, useMemo, ReactNode, useRef } from 'react';
 import { InputProps } from './types';
-import { getPrefixCls } from '../../utils';
+import { getPrefixCls } from '@/utils';
 import { isFunction } from 'lodash-es';
 import classNames from 'classnames';
-import { Close } from '../../assets/';
+import { Close } from '@/src';
 import './index.less';
 
 const Input: FC<PropsWithChildren<InputProps>> = (props) => {
