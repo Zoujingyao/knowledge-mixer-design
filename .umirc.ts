@@ -15,5 +15,10 @@ export default defineConfig({
     // 驼峰形式命名
     localsConvention: 'camelCase',
   },
+  lessLoader: {
+    modifyVars: {
+      hack: 'true; @import "~@/assets/css/index.less";',
+    },
+  },
   // more config: https://d.umijs.org/config
 });
