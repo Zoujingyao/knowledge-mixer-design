@@ -1,7 +1,8 @@
-import React, { ReactNode, useRef } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 import { message } from 'antd';
 import SignatureCanvas from 'react-signature-canvas';
 import classNames from 'classnames';
+import { useDebounce, useSize, useUpdateEffect } from 'ahooks';
 import { downloadByLink } from '@/utils';
 import { Button, IconFont } from '@/src';
 import { ButtonProps, ButtonType } from '../Button/types';
@@ -45,7 +46,21 @@ const Signature: React.FC<SignatureProps> = (props) => {
     clearIcon,
   } = props;
 
+  const [initialWindowSize, setInitialWindowSize] = useState<number>();
+  const lastFormRef = useRef(null);
   const sigPad = useRef<any>();
+  const windowSize = useSize(lastFormRef);
+  const debouncedWindowSize = useDebounce(windowSize?.width, { wait: 500 });
+
+  useUpdateEffect(() => {
+    if (!initialWindowSize && debouncedWindowSize) {
+      setInitialWindowSize(debouncedWindowSize);
+      return;
+    }
+    if (debouncedWindowSize !== initialWindowSize) {
+      message.info('浏览器屏幕变化，请重新签名');
+    }
+  }, [debouncedWindowSize]);
 
   const clear = () => {
     sigPad.current?.clear();
@@ -63,7 +78,7 @@ const Signature: React.FC<SignatureProps> = (props) => {
   };
 
   return (
-    <>
+    <div ref={lastFormRef}>
       <div className={classNames(styles.sign, className)}>
         <div className={styles.signInfo}>{tipText}</div>
         <div className={styles.signIcon} onClick={clear}>
@@ -85,7 +100,7 @@ const Signature: React.FC<SignatureProps> = (props) => {
           footer
         )}
       </div>
-    </>
+    </div>
   );
 };
 
