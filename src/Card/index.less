@@ -1,0 +1,55 @@
+.km-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-size: @default-font-size;
+  font-family: @font-family;
+  &-head {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-bottom: 1px solid @border-light-color;
+  }
+  &-head-wrapper {
+    margin: 1rem;
+  }
+  &-head-title {
+    display: inline-block;
+    flex: 1;
+  }
+  &-extra {
+    font-weight: normal;
+    margin-inline-start: auto;
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 1rem;
+    font-size: @default-font-size;
+  }
+  &-body--normal {
+    min-height: 7rem;
+  }
+  &-body--large {
+    min-height: 10rem;
+  }
+  &-body--small {
+    min-height: 5rem;
+  }
+
+  &-border {
+    border: 1px solid @border-light-color;
+    border-radius: 5px;
+  }
+  &-border:hover {
+    border: 1px solid @border-light-color;
+  }
+  &-hover:hover {
+    box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
+    transform: translate(0, -5px);
+    transition: all 0.5s;
+  }
+}

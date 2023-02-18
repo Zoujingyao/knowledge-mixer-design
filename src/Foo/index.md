@@ -1,18 +1,27 @@
 ---
+title: Foo 样板
 nav:
   title: Components
   path: /components
+group:
+  title: 样板
+  path: /components/example
+  order: 1
 ---
 
-## Foo
+## Foo 样板
+描述
 
-Demo:
+<big>**何时使用**</big>
+- 1
+- 2
 
-```tsx
-import React from 'react';
-import { Foo } from 'knowledge-mixer-design';
+## 基本用法
+....
 
-export default () => <Foo title="First Demo" />;
-```
 
-More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| children | 标题 | ReactNode | -- |

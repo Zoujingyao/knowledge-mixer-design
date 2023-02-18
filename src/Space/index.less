@@ -1,0 +1,36 @@
+.km {
+  display: inline-flex;
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-align-start {
+    align-items: flex-start;
+  }
+
+  &-align-end {
+    align-items: flex-end;
+  }
+
+  &-align-baseline {
+    align-items: baseline;
+  }
+
+  &-item:empty {
+    display: none;
+  }
+
+  &-rtl {
+    direction: rtl;
+  }
+
+  .km-btn {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
