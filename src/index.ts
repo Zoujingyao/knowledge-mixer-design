@@ -10,4 +10,5 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as TextArea } from './TextArea';
 export { default as Signature } from './Signature';
 export { default as IconFont } from './IconFont';
+export { default as Menu } from './Menu';
 export * from './assets/icon';
