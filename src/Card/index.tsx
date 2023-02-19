@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { CardProps } from './types';
-import { getPrefixCls } from '../../utils';
+import { getPrefixCls } from '@/utils';
 import { Skeleton } from 'antd';
 import './index.less';
 
