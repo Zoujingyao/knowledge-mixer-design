@@ -1,3 +1,7 @@
+/**
+ * title: 自定义
+ * description: 自定义操作栏和样式。
+ */
 import React from 'react';
 import { Button, Signature, IconFont } from '@/src';
 import styles from './index.less';
