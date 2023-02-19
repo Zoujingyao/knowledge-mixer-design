@@ -3,6 +3,7 @@ import { TabsProps } from './interface';
 import TabNav from './TabNav';
 import { TabsContext } from './index';
 import styles from './index.less';
+import classNames from 'classnames';
 
 const Tabs: React.FC<TabsProps> = (props) => {
   const { selectedKey, tabs } = useContext(TabsContext);
@@ -16,7 +17,9 @@ const Tabs: React.FC<TabsProps> = (props) => {
   return (
     <div className={styles.kmTab}>
       <TabNav {...props} />
-      {activeIdx !== undefined && <div className={styles.kmTabPanel}>{tabs?.[activeIdx]?.children}</div>}
+      {activeIdx !== undefined && (
+        <div className={classNames(styles.kmTabPanel, props?.panelClassName)}>{tabs?.[activeIdx]?.children}</div>
+      )}
     </div>
   );
 };

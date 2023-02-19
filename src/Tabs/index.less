@@ -1,30 +1,45 @@
 .km-tab {
-  .nav {
-    display: inline-block;
-    box-sizing: content-box;
-    margin-bottom: 16px;
-    padding: 2px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background: rgba(22, 22, 64, 0.04);
-    border: 1px solid rgba(22, 22, 64, 0.08);
-    border-radius: 6px;
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-    &-item {
+    &-centered {
+      justify-content: center;
+    }
+
+    &-list {
       display: inline-block;
-      height: 32px;
-      color: @primary;
-      font-size: 14px;
-      line-height: 32px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
-      padding-inline: 15px;
-      padding-block: 0;
+      box-sizing: content-box;
+      margin-bottom: 16px;
+      padding: 2px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      background: rgba(22, 22, 64, 0.04);
+      border: 1px solid rgba(22, 22, 64, 0.08);
+      border-radius: 6px;
 
-      &-selected {
-        background: #fff;
+      &-item {
+        display: inline-block;
+        height: 32px;
+        color: @primary;
+        font-size: 14px;
+        line-height: 32px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s;
+        padding-inline: 15px;
+        padding-block: 0;
+
+        &-selected {
+          background: #fff;
+        }
+
+        &-disabled {
+          color: @gray500;
+          cursor: not-allowed;
+        }
       }
     }
   }

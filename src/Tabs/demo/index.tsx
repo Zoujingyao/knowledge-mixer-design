@@ -1,24 +1,24 @@
+/**
+ * title: 自定义样式
+ * description: 自定义面板样式。
+ */
+
 import React from 'react';
 import { Tabs } from '@/src';
+import styles from './index.less';
 
 export default () => {
-  const items = [
-    {
-      key: '1',
-      label: 'Tab 1',
-      children: 'Content of Tab Pane 1',
-    },
-    {
-      key: '2',
-      label: 'Tab 2',
-      children: 'Content of Tab Pane 2',
-    },
-    {
-      key: '3',
-      label: 'Tab 3',
-      children: 'Content of Tab Pane 3',
-    },
-  ];
-
-  return <Tabs items={items} />;
+  return (
+    <Tabs
+      items={new Array(3).fill(null).map((_, i) => {
+        const id = String(i + 1);
+        return {
+          label: `Tab ${id}`,
+          key: id,
+          children: `Content of Tab Pane ${id}`,
+        };
+      })}
+      panelClassName={styles.panel}
+    />
+  );
 };
