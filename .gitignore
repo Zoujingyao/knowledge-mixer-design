@@ -28,3 +28,6 @@
 
 # test snapshots
 __snapshots__
+
+# cache
+.eslintcache
