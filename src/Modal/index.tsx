@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
-import { getPrefixCls } from '../../utils';
-import Button from '../Button';
+import { getPrefixCls } from '@/utils';
+import { Button } from '@/src';
 import { useModal } from './hooks';
 
 import type { FC, PropsWithChildren } from 'react';

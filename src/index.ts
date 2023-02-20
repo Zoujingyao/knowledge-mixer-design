@@ -1,4 +1,3 @@
-export { default as Foo } from './Foo';
 export { default as PasswordItem } from './PasswordItem';
 export { default as Button } from './Button';
 export { default as Modal } from './Modal';
@@ -11,4 +10,5 @@ export { default as TextArea } from './TextArea';
 export { default as Signature } from './Signature';
 export { default as IconFont } from './IconFont';
 export { default as Menu } from './Menu';
+export { default as Tabs } from './Tabs';
 export * from './assets/icon';

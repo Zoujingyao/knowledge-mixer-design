@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextArea /> render TextArea with dumi 1`] = `
+<div>
+  <textarea
+    className="textarea"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onCompositionEnd={[Function]}
+    onCompositionStart={[Function]}
+    onFocus={[Function]}
+    onKeyUp={[Function]}
+    value=""
+  />
+</div>
+`;

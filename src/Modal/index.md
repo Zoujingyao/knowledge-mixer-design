@@ -8,14 +8,19 @@ group:
   path: /components/react
 ---
 
-## Modal 对话框
+# Modal 对话框
 模态对话框
 
 <big>**何时使用**</big>
 需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 Modal 在当前页面正中打开一个浮层，承载相应的操作
 
-## 基本用法
+## 代码演示
+
+### 基本
 ```tsx
+/**
+ * description: 默认带【取消】和【确定】操作项。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -40,8 +45,10 @@ return (
 ```
 
 ### 确认对话框
-onCancel/onOk 返回 promise 可以延迟关闭
 ```tsx
+/**
+ * description: onCancel/onOk 返回 promise 可以延迟关闭。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -64,9 +71,12 @@ return (
 )
 };
 ```
+
 ### 自定义页脚按钮属性
-传入 okButtonProps 和 cancelButtonProps 可分别自定义确定按钮和取消按钮的 props
 ```tsx
+/**
+ * description: 传入 okButtonProps 和 cancelButtonProps 可分别自定义确定按钮和取消按钮的 props。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -89,9 +99,12 @@ return (
 )
 };
 ```
+
 ### 自定义页脚
-自定义了页脚的按钮,不需要默认确定取消按钮时，你可以把 footer 设为 null
 ```tsx
+/**
+ * description: 自定义了页脚的按钮,不需要默认确定取消按钮时，可以把 footer 设为 null。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -129,9 +142,12 @@ return (
 )
 };
 ```
-### 国际化
-设置 okText 与 cancelText 以自定义按钮文字。
+
+### 自定义按钮文字
 ```tsx
+/**
+ * description: 设置 okText 与 cancelText 以自定义按钮文字。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -156,9 +172,12 @@ return (
 )
 };
 ```
-### 自定义模态的宽度
-使用 width 来设置模态对话框的宽度
+
+### 自定义模态框的宽度
 ```tsx
+/**
+ * description: 使用 width 来设置模态对话框的宽度。
+ */
 import React,{useState} from 'react';
 import { Button,Spin,Check,Modal } from 'knowledge-mixer-design';
 
@@ -185,6 +204,7 @@ return (
 };
 ```
 
+## API
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | cancelButtonProps |	cancel 按钮 props |	ButtonProps |	-- |	

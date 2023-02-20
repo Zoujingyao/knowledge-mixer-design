@@ -11,14 +11,21 @@ group:
 # 签名框 
 默认带签名保存和清空功能，支持自定义下载文件名、操作名、操作项。
 
-## 基本使用
+## 代码演示
+
+### 基本
 ```tsx
+/**
+ * title: 
+ * description: 默认带【保存】和【清空】操作项。
+ */
 import React from 'react';
 import { Signature } from 'knowledge-mixer-design';
 
 export default () => <Signature />;
 ```
-## 自定义
+
+### 自定义
 <code src="./demo/index.tsx"></code>
 
 <API src="./index.tsx" ></API>
