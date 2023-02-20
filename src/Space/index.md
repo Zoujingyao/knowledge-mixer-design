@@ -19,9 +19,13 @@ group:
 - 适合行内元素的水平间距
 - 可以设置各种水平对齐方式
 
-## 基本用法
+## 代码演示
 
+### 基本
 ```tsx
+/**
+ * description: 相邻组件水平间距。
+ */
 import React from 'react';
 import { Button, Space }  from 'knowledge-mixer-design';
 
@@ -39,12 +43,10 @@ export default () => {
 ```
 
 ### 间距大小
-
-间距预设大、中、小三种大小
-
-通过设置 `size` 为 `small` `middle` `large` 分别把间距设为小、中、大间距。若不设置 `size`，则默认为`small`
-
 ```tsx
+/**
+ * description: 间距预设大、中、小三种尺寸，通过设置 `size` 为 `small` `middle` `large` 分别把间距设为小、中、大间距。默认为`small`。
+ */
 import React from 'react';
 import { Button, Space }  from 'knowledge-mixer-design';
 
@@ -75,11 +77,11 @@ export default () => {
 };
 ```
 
-也可以自定义间距大小
-
-通过设置 `size` 为一个 `number` 类型的数字，来控制间距大小
-
+### 自定义间距大小
 ```tsx
+/**
+ * description: 通过设置 `size` 为一个 `number` 类型的数字，来控制间距大小。
+ */
 import React from 'react';
 import { Button, Space }  from 'knowledge-mixer-design';
 
@@ -104,8 +106,10 @@ export default () => {
 ```
 
 ### 间距方向
-
 ```tsx
+/**
+ * description: direction控制水平/垂直布局。
+ */
 import React from 'react';
 import { Button, Space } from 'knowledge-mixer-design';
 
@@ -121,8 +125,10 @@ export default () => {
 ```
 
 ### 自动换行
-
 ```tsx
+/**
+ * description: 超出一行自动换行。
+ */
 import React from 'react';
 import { Button, Space }  from 'knowledge-mixer-design';
 
@@ -137,9 +143,11 @@ export default () => {
 };
 ```
 
-### 对齐模式
-
+### 对齐
 ```tsx
+/**
+ * description: 设置对齐模式。
+ */
 import React from 'react';
 import { Button, Space }  from 'knowledge-mixer-design';
 

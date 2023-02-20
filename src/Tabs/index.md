@@ -12,9 +12,10 @@ group:
 选项卡切换组件。提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
 
 ## 代码演示
+
+### 基本
 ```tsx
 /**
- * title: 基本
  * description: 默认选中第一项。
  */
 import React from 'react';
@@ -54,9 +55,9 @@ export default () => {
 };
 ```
 
+### 禁用
 ```tsx
 /**
- * title: 禁用
  * description: 禁用某一项。
  */
 import React from 'react';
@@ -86,9 +87,9 @@ export default () => {
 };
 ```
 
+### 居中
 ```tsx
 /**
- * title: 居中
  * description: 标签居中展示。
  */
 import React from 'react';
@@ -111,9 +112,9 @@ export default () => {
 };
 ```
 
+### 附加内容
 ```tsx
 /**
- * title: 附加内容
  * description: 可以在页签后添加附加操作。
  */
 import React from 'react';
@@ -136,6 +137,7 @@ export default () => {
 };
 ```
 
+### 自定义样式
 <code src='./demo/index.tsx'></code>
 
 <API src="./index.tsx" ></API>

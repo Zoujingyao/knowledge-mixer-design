@@ -1,5 +1,5 @@
 ---
-title: TextArea  输入框
+title: TextArea 文本输入域
 nav:
   title: Components 
   path: /components 
@@ -8,11 +8,15 @@ group:
   path: /components/data-input
 ---
 
-# TextArea 文本输入框
-描述
+# TextArea 文本输入域
 
-## 基本用法
+## 代码演示
+
+### 基本
 ```tsx
+/**
+ * description: 用于多行输入。
+ */
 import React from 'react';
 import { TextArea } from 'knowledge-mixer-design';
 export default ()=>{
@@ -20,4 +24,4 @@ export default ()=>{
 }
 ```
 
-<API></API>
+<API src="./index.tsx"></API>

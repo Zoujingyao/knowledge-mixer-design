@@ -8,14 +8,13 @@ group:
   path: /components/common
 ---
 
-## Button 按钮
+# Button 按钮
 按钮用于开始一个即时操作。
-
-<big>**何时使用**</big>
 标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
 
-## 基本用法
+## 代码演示
 
+### 基本
 ```tsx
 import React from 'react';
 import { Button,Spin,Check } from 'knowledge-mixer-design';
@@ -30,9 +29,12 @@ return (
 )
 };
 ```
+
 ### 事件绑定
-`onClick`点击按钮时的回调绑定响应事件
 ```tsx
+/**
+ * description: onClick点击按钮时的回调绑定响应事件。
+ */
 import React from 'react';
 import { Button } from 'knowledge-mixer-design';
 
@@ -59,11 +61,14 @@ return (
 )
 };
 ```
+
 ### 异步
-添加 `loading` 属性即可让按钮在响应异步时间时处于加载状态
 ```tsx
+/**
+ * description: 添加 `loading` 属性即可让按钮在响应异步时间时处于加载状态。
+ */
 import React from 'react';
-import { Button} from 'knowledge-mixer-design';
+import { Button } from 'knowledge-mixer-design';
 
 export default () => {
   const handleSyncClick = () => {
@@ -84,11 +89,14 @@ return (
 )
 };
 ```
+
 ### ICON
-当需要在 Button 内嵌入 Icon 时，可以设置 `icon` 属性，或者直接在 Button 内使用 Icon 组件
 ```tsx
+/**
+ * description: 当需要在 Button 内嵌入 Icon 时，可以设置 `icon` 属性，或者直接在 Button 内使用 Icon 组件。
+ */
 import React from 'react';
-import { Button,Spin,Check } from 'knowledge-mixer-design';
+import { Button, Spin, Check } from 'knowledge-mixer-design';
 
 export default () => {
 return (
@@ -102,9 +110,12 @@ return (
 )
 };
 ```
+
 ### Button Style
-通过设置`colorSchemes`属性确认Button类型,或直接添加`style`属性确认Button样式
 ```tsx
+/**
+ * description: 通过设置`colorSchemes`属性确认Button类型,或直接添加`style`属性确认Button样式。
+ */
 import React from 'react';
 import { Button} from 'knowledge-mixer-design';
 
@@ -123,6 +134,7 @@ return (
 )
 };
 ```
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 |
