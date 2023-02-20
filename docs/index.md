@@ -1,21 +1,9 @@
 ---
 hero:
   title: knowledge-mixer-design
-  desc: 《42号混凝土要拌意大利面》1919810
+  desc: 一套基于React的组件库，设计并实现了12个典型的组件，分属于通用、展示、录入、布局和反馈五种不同的类型。
   actions:
     - text: 开始
       link: /components
-features:
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
-    title: Feature 1
-    desc: Balabala
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/d60657df-0822-4631-9d7c-e7a869c2f21c/k79dmz3q_w126_h126.png
-    title: Feature 2
-    desc: Balabala
-  - icon: https://gw.alipayobjects.com/zos/bmw-prod/d1ee0c6f-5aed-4a45-a507-339a4bfe076c/k7bjsocq_w144_h144.png
-    title: Feature 3
-    desc: Balabala
-footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
+footer: 《42号混凝土要拌意大利面》 | 1919810 | [项目演示地址](http://knowledge-mixer-design.surge.sh/) | [项目地址](https://github.com/Zoujingyao/knowledge-mixer-design)
 ---
-
-## Hello knowledge-mixer-design!

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumb /> render Breadcrumb with dumi 1`] = `
+<nav
+  className="km-breadcrumb"
+>
+  <ol>
+    <li>
+      <span
+        className="km-breadcrumb-link"
+      >
+        Home
+      </span>
+      <span
+        className="km-breadcrumb-separator"
+      >
+        /
+      </span>
+    </li>
+    <li>
+      <span
+        className="km-breadcrumb-link"
+      >
+        <a
+          href=""
+        >
+          Application Center
+        </a>
+      </span>
+      <span
+        className="km-breadcrumb-separator"
+      >
+        /
+      </span>
+    </li>
+    <li>
+      <span
+        className="km-breadcrumb-link"
+      >
+        <a
+          href=""
+        >
+          Application List
+        </a>
+      </span>
+      <span
+        className="km-breadcrumb-separator"
+      >
+        /
+      </span>
+    </li>
+    <li>
+      <span
+        className="km-breadcrumb-link"
+      >
+        An Application
+      </span>
+      <span
+        className="km-breadcrumb-separator"
+      >
+        /
+      </span>
+    </li>
+  </ol>
+</nav>
+`;
