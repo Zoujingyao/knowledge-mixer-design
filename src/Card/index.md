@@ -8,14 +8,18 @@ group:
   path: /components/data-display
 ---
 
-## Card 卡片
+# Card 卡片
+基础的卡片容器，可承载文字、列表、图片、段落。
 
-Demo:
+## 代码演示
 
+### 基本
 ```tsx
+/**
+ * description: 带标题可悬浮的卡片容器。
+ */
 import React, { useState } from 'react';
-import Card from '../Card';
-import { Button } from 'antd';
+import { Card, Button } from 'knowledge-mixer-design';
 
 export default () => {
   const ref = React.createRef<HTMLDivElement>();
@@ -31,5 +35,6 @@ export default () => {
     </div>
   );
 };
-
 ```
+
+<API src="./index.tsx" ></API>

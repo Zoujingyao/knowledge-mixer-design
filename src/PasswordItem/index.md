@@ -18,11 +18,13 @@ group:
 
 支持自定义校验规则
 
-## 代码示例
+## 代码演示
 
-### 基础示例
-
+### 基本
 ```tsx
+/**
+ * description: 带默认校验规则。
+ */
 import React from 'react';
 import { Form, Button } from 'antd';
 import { PasswordItem } from 'knowledge-mixer-design'; // 通过包名引入，而不是相对路径
@@ -51,12 +53,14 @@ export default () => {
 };
 ```
 
-### 自定义校验规则
-
+### 自定义
 ```tsx
+/**
+ * description: 支持自定义校验规则和气泡位置。
+ */
 import React from 'react';
 import { Form, Button } from 'antd';
-import { PasswordItem } from 'knowledge-mixer-design'; // 通过包名引入，而不是相对路径
+import { PasswordItem } from 'knowledge-mixer-design'; 
 
 export default () => {
   return (

@@ -11,9 +11,9 @@ group:
 
 # Breadcrumb 面包屑
 
+## 代码演示
 
-## 基本用法
-
+### 基本
 ```tsx
 import React from 'react';
 import { Breadcrumb } from 'knowledge-mixer-design';
@@ -33,9 +33,7 @@ export default () => {
 };
 ```
 
-
-## 自定义分隔符
-
+### 自定义分隔符
 ```tsx
 import React from 'react';
 import { Breadcrumb } from 'knowledge-mixer-design';
@@ -54,3 +52,5 @@ export default () => {
   );
 };
 ```
+
+<API src="./index.tsx" ></API>

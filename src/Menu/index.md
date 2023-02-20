@@ -7,12 +7,18 @@ group:
   title: 数据录入
   path: /components/data-input
 ---
+# Menu 菜单
 
-## 何时使用
+<big>**何时使用**</big>
+
 导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。这里提供顶部导航和侧边导航，为了更符合使用习惯，顶部导航栏下拉菜单不需要点击就可以展开。
 
-## menu-horizontal:
-```jsx
+## 代码演示
+### 基本
+```tsx
+/**
+ * description: 默认为水平布局。
+ */
 import React from 'react';
 import { Menu } from 'knowledge-mixer-design';
 const test = () => {
@@ -42,10 +48,13 @@ const test = () => {
 };
 
 export default test;
-
 ```
-## menu-vertiacl:
-```jsx
+
+### 水平/垂直布局
+```tsx
+/**
+ * description: mode可设置水平/垂直布局。
+ */
 import React from 'react';
 import { Menu } from 'knowledge-mixer-design';
 const test = () => {
@@ -83,8 +92,8 @@ const test = () => {
 };
 
 export default test;
-
 ```
+
 ## API
 
 ### Menu

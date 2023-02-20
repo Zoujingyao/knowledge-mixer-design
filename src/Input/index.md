@@ -10,8 +10,13 @@ group:
 
 # Input 输入框
 
-## 基本样式
+## 代码演示
+
+### 基本
 ```tsx
+/**
+ * description: 支持三种尺寸。
+ */
 import React from 'react';
 import { Input } from 'knowledge-mixer-design';
 
@@ -28,9 +33,11 @@ export default () => {
 };
 ```
 
-
-## 不同状态的输入框
+### 状态
 ```tsx
+/**
+ * description: 不同状态的输入框。
+ */
 import React from 'react';
 import { Input } from 'knowledge-mixer-design';
 
@@ -48,9 +55,11 @@ return (
 };
 ```
 
-## 有前置/后置的输入框
+### 前置/后置标签
 ```tsx
-
+/**
+ * description: 有前置/后置的输入框。
+ */
 import React from 'react';
 import { Input,Check } from 'knowledge-mixer-design';
 
@@ -80,5 +89,4 @@ return (
  
 ```
 
-
-<API></API>
+<API src="./index.tsx" ></API>

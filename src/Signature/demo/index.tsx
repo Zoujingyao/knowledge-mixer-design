@@ -1,5 +1,4 @@
 /**
- * title: 自定义
  * description: 自定义操作栏和样式。
  */
 import React from 'react';

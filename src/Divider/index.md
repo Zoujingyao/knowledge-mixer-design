@@ -8,16 +8,20 @@ group:
   path: /components/layout
 ---
 
-## Divider 分割线
+# Divider 分割线
 对文本段落进行分割展示。
 
 <big>**何时使用**</big>
 - 对不同的段落进行分割。
 - 对行内文字进行分割，例如`span`标签、表格的操作列等。
 
-## 基本用法
+## 代码演示
 
+### 基本
 ```tsx
+/**
+ * description: 默认垂直布局。
+ */
 import React from 'react';
 import { Divider } from 'knowledge-mixer-design';
 
@@ -76,10 +80,11 @@ export default () => {
 ```
 
 ### 垂直分割线
-
-使用 `type="vertical"` 设置为行内的垂直分割线。
-
 ```tsx
+
+/**
+ * description: 使用 `type="vertical"` 设置为行内的垂直分割线。
+ */
 import React from 'react';
 import { Divider, Button } from 'knowledge-mixer-design';
 

@@ -57,7 +57,7 @@ const Signature: React.FC<SignatureProps> = (props) => {
       setInitialWindowSize(debouncedWindowSize);
       return;
     }
-    if (debouncedWindowSize !== initialWindowSize) {
+    if (initialWindowSize && debouncedWindowSize !== initialWindowSize) {
       message.info('浏览器屏幕变化，请重新签名');
     }
   }, [debouncedWindowSize]);
