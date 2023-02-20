@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> render Input with dumi 1`] = `
+<input
+  className="km-input km-input-sm"
+  disabled={false}
+  placeholder="small"
+  type="text"
+/>
+`;

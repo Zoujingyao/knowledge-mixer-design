@@ -27,7 +27,7 @@
 /.idea
 
 # test snapshots
-__snapshots__
+#__snapshots__
 
 # cache
 .eslintcache
